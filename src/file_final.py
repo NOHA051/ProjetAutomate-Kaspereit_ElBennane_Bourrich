@@ -142,20 +142,57 @@ def afficher_tableau(automate, titre="Automate"):
 # 3. EPSILON-FERMETURE
 # ─────────────────────────────────────────────
 
+def epsilon_fermeture(etats_set, transitions):
+   """Calcule l'ε-fermeture d'un ensemble d'états."""
+   pile = list(etats_set)
+   fermeture = set(etats_set)
+   while pile:
+       e = pile.pop()
+       for dest in transitions[e].get('ε', set()):
+           if dest not in fermeture:
+               fermeture.add(dest)
+               pile.append(dest)
+   return frozenset(fermeture)
 
 
+def supprimer_epsilon(automate):
+   """Supprime les ε-transitions par calcul des ε-fermetures."""
+   trans     = automate['transitions']
+   alphabet  = automate['alphabet']
+   etats     = automate['etats']
+   initiaux  = automate['initiaux']
+   terminaux = set(automate['terminaux'])
 
+   # Vérifie s'il y a des ε-transitions
+   has_eps = any('ε' in trans[s] for s in etats)
+   if not has_eps:
+       return automate
 
+   new_trans = defaultdict(lambda: defaultdict(set))
+   for e in etats:
+       ferm = epsilon_fermeture({e}, trans)
+       for lettre in alphabet:
+           atteignables = set()
+           for f in ferm:
+               for d in trans[f].get(lettre, set()):
+                   atteignables |= epsilon_fermeture({d}, trans)
+           if atteignables:
+               new_trans[e][lettre] = atteignables
 
+   new_terminaux = set()
+   for e in etats:
+       ferm = epsilon_fermeture({e}, trans)
+       if ferm & terminaux:
+           new_terminaux.add(e)
 
-
-
-
-
-
-
-
-
+   return {
+       'alphabet':    alphabet,
+       'etats':       etats,
+       'initiaux':    initiaux,
+       'terminaux':   sorted(new_terminaux),
+       'transitions': new_trans,
+       'nb_etats':    automate['nb_etats'],
+   }
 
 
 # ─────────────────────────────────────────────
@@ -207,27 +244,48 @@ def est_complet(automate):
 # ─────────────────────────────────────────────
 
 
+def standardiser(automate):
+    """
+    Standardisation : si l'automate n'est pas standard, on ajoute un
+    nouvel état initial i_new et on copie toutes les transitions sortantes
+    des anciens états initiaux. Si un ancien initial était terminal,
+    i_new devient aussi terminal.
+    """
+    if est_standard(automate):
+        print("  → L'automate est déjà standard.")
+        return automate
 
+    trans     = automate['transitions']
+    etats     = automate['etats']
+    initiaux  = automate['initiaux']
+    terminaux = set(automate['terminaux'])
+    alphabet  = automate['alphabet']
 
+    new_initial = max(etats) + 1
+    new_trans   = defaultdict(lambda: defaultdict(set))
 
+    # copier les transitions existantes
+    for src in etats:
+        for lettre, dests in trans[src].items():
+            new_trans[src][lettre] = set(dests)
 
+    # nouvelles transitions depuis new_initial
+    for i in initiaux:
+        for lettre, dests in trans[i].items():
+            new_trans[new_initial][lettre] |= dests
 
+    new_terminaux = set(terminaux)
+    if any(i in terminaux for i in initiaux):
+        new_terminaux.add(new_initial)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return {
+        'alphabet':    alphabet,
+        'etats':       etats + [new_initial],
+        'initiaux':    [new_initial],
+        'terminaux':   sorted(new_terminaux),
+        'transitions': new_trans,
+        'nb_etats':    len(etats) + 1,
+    }
 
 
 # ─────────────────────────────────────────────
@@ -338,23 +396,102 @@ def completer(automate):
 # ─────────────────────────────────────────────
 # 7. MINIMISATION (algorithme de Moore)
 # ─────────────────────────────────────────────
+def minimiser(automate):
+    """
+    Minimisation d'un AFD complet par l'algorithme de Moore
+    (raffinement de partitions).
+    """
+    aut = determiniser(automate)  # s'assure que c'est un AFD complet
 
+    alphabet  = aut['alphabet']
+    etats     = aut['etats']
+    trans     = aut['transitions']
+    terminaux = set(aut['terminaux'])
 
+    # Supprimer les états non accessibles
+    accessibles = set()
+    file = deque(aut['initiaux'])
+    accessibles.update(aut['initiaux'])
+    while file:
+        e = file.popleft()
+        for lettre in alphabet:
+            for d in trans[e].get(lettre, set()):
+                if d not in accessibles:
+                    accessibles.add(d)
+                    file.append(d)
+    etats = [e for e in etats if e in accessibles]
 
+    # Partition initiale : terminaux / non-terminaux
+    T  = frozenset(e for e in etats if e in terminaux)
+    NT = frozenset(e for e in etats if e not in terminaux)
+    partition = [p for p in [T, NT] if p]
 
+    def classe_de(e, partition):
+        for i, p in enumerate(partition):
+            if e in p:
+                return i
+        return -1
 
+    # Raffinement
+    changed = True
+    while changed:
+        changed = False
+        new_partition = []
+        for groupe in partition:
+            sous_groupes = defaultdict(set)
+            for e in groupe:
+                signature = tuple(
+                    classe_de(next(iter(trans[e].get(lettre, {-1})), -1), partition)
+                    for lettre in alphabet
+                )
+                sous_groupes[signature].add(e)
+            splits = list(sous_groupes.values())
+            if len(splits) > 1:
+                changed = True
+            new_partition.extend([frozenset(s) for s in splits])
+        partition = new_partition
 
+    # Construction de l'AFD minimisé
+    # Associer chaque groupe à un id
+    grp_id = {}
+    init_grp = None
+    for i, grp in enumerate(partition):
+        grp_id[frozenset(grp)] = i
+        for e in aut['initiaux']:
+            if e in grp:
+                init_grp = i
 
+    def grp_de(e):
+        for grp in partition:
+            if e in grp:
+                return grp_id[frozenset(grp)]
+        return -1
 
+    new_trans = defaultdict(lambda: defaultdict(set))
+    new_terminaux = set()
+    representants = {}
 
+    for grp in partition:
+        g = grp_id[frozenset(grp)]
+        rep = min(grp)
+        representants[g] = rep
+        if rep in terminaux:
+            new_terminaux.add(g)
+        for lettre in alphabet:
+            dests = trans[rep].get(lettre, set())
+            if dests:
+                d = next(iter(dests))
+                new_trans[g][lettre] = {grp_de(d)}
 
-
-
-
-
-
-
-
+    nb = len(partition)
+    return {
+        'alphabet':    alphabet,
+        'etats':       list(range(nb)),
+        'initiaux':    [init_grp] if init_grp is not None else [0],
+        'terminaux':   sorted(new_terminaux),
+        'transitions': new_trans,
+        'nb_etats':    nb,
+    }
 
 
 # ─────────────────────────────────────────────
