@@ -198,7 +198,7 @@ def supprimer_epsilon(automate):
 # ─────────────────────────────────────────────
 # 4. VÉRIFICATIONS
 # ─────────────────────────────────────────────
-/////////////VERIFICATIONS /////////
+
 def est_standard(automate):
     """Un automate est standard s'il a un unique état initial
     et qu'aucune transition ne pointe vers cet état initial."""
