@@ -600,7 +600,7 @@ def choisir_fichier(dossier="automates"):
 
 
 def main():
-    dossier = "automates"
+    dossier = os.path.join(os.path.dirname(os.path.abspath(__file__)), "automates")
     if len(sys.argv) > 1:
         # fichier passé en argument
         chemin = sys.argv[1]
