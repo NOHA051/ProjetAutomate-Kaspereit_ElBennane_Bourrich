@@ -1,0 +1,926 @@
+exemple de trace d'éxecution :
+
+automate 1 :
+
+════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 1
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_01.txt)
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_01.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Non
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+  → L'automate est déjà standard.
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+  ── Étape 2 : Déterminisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  | {1} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  | {1} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_01.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
+------------------------------------------------------------------------------------
+════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 2
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_02.txt)
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {0} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_02.txt
+  Standard      : Non
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+|  *0  | {0} |
++------+-----+
+| →*1  | {0} |
++------+-----+
+  Initiaux  : [1]
+  Terminaux : [0, 1]
+  Alphabet  : ['a']
+
+  ── Étape 2 : Déterminisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+|  *0  | {0} |
++------+-----+
+| →*1  | {0} |
++------+-----+
+  Initiaux  : [1]
+  Terminaux : [0, 1]
+  Alphabet  : ['a']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {0} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_02.txt
+  Standard      : Non
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
+--------------------------------------------------------------------------
+════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 3
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_03.txt)
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| → 0  | {1} |
++------+-----+
+|  *1  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [1]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_03.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Non
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+  → L'automate est déjà standard.
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| → 0  | {1} |
++------+-----+
+|  *1  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [1]
+  Alphabet  : ['a']
+
+  ── Étape 2 : Déterminisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| → 0  | {1} |
++------+-----+
+|  *1  | {2} |
++------+-----+
+|   2  | {2} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [1]
+  Alphabet  : ['a']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+|  *0  | {2} |
++------+-----+
+| → 1  | {0} |
++------+-----+
+|   2  | {2} |
++------+-----+
+  Initiaux  : [1]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_03.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
+--------------------------------------------------------------------------
+════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 4
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_04.txt)
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_04.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Non
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+  → L'automate est déjà standard.
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  |  ∅  |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+  ── Étape 2 : Déterminisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  | {2} |
++------+-----+
+|   2  | {2} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+
+| État |  a  |
++======+=====+
+| →*0  | {1} |
++------+-----+
+|   1  | {1} |
++------+-----+
+  Initiaux  : [0]
+  Terminaux : [0]
+  Alphabet  : ['a']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_04.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
+---------------------------------------------------------------------
+════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 5
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_05.txt)
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|   0  | {0} | {0} |
++------+-----+-----+
+| → 1  | {2} | {0} |
++------+-----+-----+
+|  *2  |  ∅  |  ∅  |
++------+-----+-----+
+| → 3  | {0} | {4} |
++------+-----+-----+
+|  *4  |  ∅  |  ∅  |
++------+-----+-----+
+  Initiaux  : [1, 3]
+  Terminaux : [2, 4]
+  Alphabet  : ['a', 'b']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_05.txt
+  Standard      : Non
+  Déterministe  : Non
+  Complet       : Non
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|   0  | {0} | {0} |
++------+-----+-----+
+|   1  | {2} | {0} |
++------+-----+-----+
+|  *2  |  ∅  |  ∅  |
++------+-----+-----+
+|   3  | {0} | {4} |
++------+-----+-----+
+|  *4  |  ∅  |  ∅  |
++------+-----+-----+
+| → 5  |{0,2}|{0,4}|
++------+-----+-----+
+  Initiaux  : [5]
+  Terminaux : [2, 4]
+  Alphabet  : ['a', 'b']
+
+  ── Étape 2 : Déterminisation ──
+
+  Correspondance sous-ensembles → états :
+    État 0 ← {5}
+    État 1 ← {0,2}
+    État 2 ← {0,4}
+    État 3 ← {0}
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+| → 0  | {1} | {2} |
++------+-----+-----+
+|  *1  | {3} | {3} |
++------+-----+-----+
+|  *2  | {3} | {3} |
++------+-----+-----+
+|   3  | {3} | {3} |
++------+-----+-----+
+  Initiaux  : [0]
+  Terminaux : [1, 2]
+  Alphabet  : ['a', 'b']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|  *0  | {2} | {2} |
++------+-----+-----+
+| → 1  | {0} | {0} |
++------+-----+-----+
+|   2  | {2} | {2} |
++------+-----+-----+
+  Initiaux  : [1]
+  Terminaux : [0]
+  Alphabet  : ['a', 'b']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_05.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
+-------------------------------------------------------------------
+automate 6 :
+
+ ════════════════════════════════════════════════════════════
+  Automates disponibles :
+════════════════════════════════════════════════════════════
+    1. automate_01.txt
+    2. automate_02.txt
+    3. automate_03.txt
+    4. automate_04.txt
+    5. automate_05.txt
+    6. automate_06.txt
+    7. automate_07.txt
+    8. automate_08.txt
+    9. automate_09.txt
+   10. automate_10.txt
+   11. automate_11.txt
+   12. automate_12.txt
+   13. automate_13.txt
+   14. automate_14.txt
+   15. automate_15.txt
+   16. automate_16.txt
+   17. automate_17.txt
+   18. automate_18.txt
+   19. automate_19.txt
+   20. automate_20.txt
+   21. automate_21.txt
+   22. automate_22.txt
+   23. automate_23.txt
+   24. automate_24.txt
+   25. automate_25.txt
+   26. automate_26.txt
+   27. automate_27.txt
+   28. automate_28.txt
+   29. automate_29.txt
+   30. automate_30.txt
+   31. automate_31.txt
+   32. automate_32.txt
+   33. automate_33.txt
+   34. automate_34.txt
+   35. automate_35.txt
+   36. automate_36.txt
+   37. automate_37.txt
+   38. automate_38.txt
+   39. automate_39.txt
+   40. automate_40.txt
+   41. automate_41.txt
+   42. automate_42.txt
+   43. automate_43.txt
+   44. automate_44.txt
+   0. Quitter
+
+  Numéro de l'automate : 5
+
+════════════════════════════════════════════════════════════
+  Automate original (automate_05.txt)
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|   0  | {0} | {0} |
++------+-----+-----+
+| → 1  | {2} | {0} |
++------+-----+-----+
+|  *2  |  ∅  |  ∅  |
++------+-----+-----+
+| → 3  | {0} | {4} |
++------+-----+-----+
+|  *4  |  ∅  |  ∅  |
++------+-----+-----+
+  Initiaux  : [1, 3]
+  Terminaux : [2, 4]
+  Alphabet  : ['a', 'b']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_05.txt
+  Standard      : Non
+  Déterministe  : Non
+  Complet       : Non
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix : 5
+
+  ── Étape 1 : Standardisation ──
+
+════════════════════════════════════════════════════════════
+  1. Standardisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|   0  | {0} | {0} |
++------+-----+-----+
+|   1  | {2} | {0} |
++------+-----+-----+
+|  *2  |  ∅  |  ∅  |
++------+-----+-----+
+|   3  | {0} | {4} |
++------+-----+-----+
+|  *4  |  ∅  |  ∅  |
++------+-----+-----+
+| → 5  |{0,2}|{0,4}|
++------+-----+-----+
+  Initiaux  : [5]
+  Terminaux : [2, 4]
+  Alphabet  : ['a', 'b']
+
+  ── Étape 2 : Déterminisation ──
+
+  Correspondance sous-ensembles → états :
+    État 0 ← {5}
+    État 1 ← {0,2}
+    État 2 ← {0,4}
+    État 3 ← {0}
+
+════════════════════════════════════════════════════════════
+  2. Déterminisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+| → 0  | {1} | {2} |
++------+-----+-----+
+|  *1  | {3} | {3} |
++------+-----+-----+
+|  *2  | {3} | {3} |
++------+-----+-----+
+|   3  | {3} | {3} |
++------+-----+-----+
+  Initiaux  : [0]
+  Terminaux : [1, 2]
+  Alphabet  : ['a', 'b']
+
+  ── Étape 3 : Minimisation ──
+  → L'automate est déjà déterministe.
+
+════════════════════════════════════════════════════════════
+  3. Minimisé
+════════════════════════════════════════════════════════════
++------+-----+-----+
+| État |  a  |  b  |
++======+=====+=====+
+|  *0  | {2} | {2} |
++------+-----+-----+
+| → 1  | {0} | {0} |
++------+-----+-----+
+|   2  | {2} | {2} |
++------+-----+-----+
+  Initiaux  : [1]
+  Terminaux : [0]
+  Alphabet  : ['a', 'b']
+
+────────────────────────────────────────────────────────────
+  Fichier : automate_05.txt
+  Standard      : Oui
+  Déterministe  : Oui
+  Complet       : Oui
+────────────────────────────────────────────────────────────
+  1. Afficher le tableau
+  2. Standardiser
+  3. Déterminiser
+  4. Minimiser
+  5. Pipeline complet (Standard → Déterministe → Minimal)
+  6. Réinitialiser (automate original)
+  0. Quitter / changer de fichier
+  Votre choix :
