@@ -568,7 +568,7 @@ def menu(automate_original, nom_fichier):
             print("  Choix invalide.")
 
 
-def choisir_fichier(dossier="automates_txt"):
+def choisir_fichier(dossier="automates"):
     """Liste les fichiers .txt du dossier et permet d'en choisir un."""
     if not os.path.isdir(dossier):
         print(f"Dossier '{dossier}' introuvable.")
@@ -600,7 +600,7 @@ def choisir_fichier(dossier="automates_txt"):
 
 
 def main():
-    dossier = "automates_txt"
+    dossier = "automates"
     if len(sys.argv) > 1:
         # fichier passé en argument
         chemin = sys.argv[1]
